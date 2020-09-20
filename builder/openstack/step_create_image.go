@@ -113,7 +113,7 @@ func (s *stepCreateImage) Cleanup(multistep.StateBag) {
 
 // WaitForImage waits for the given Image ID to become ready.
 func WaitForImage(ctx context.Context, client *gophercloud.ServiceClient, imageId string) error {
-	maxNumErrors := 60
+	maxNumErrors := 300
 	numErrors := 0
 
 	for {
